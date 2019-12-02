@@ -148,30 +148,56 @@ public class CalculateResult extends AppCompatActivity {
     }
     public double calcFedralTax() {
         //calculate federal tax
-        double temp = taxableIncome;
+        double mTemp = taxableIncome;
         if (taxableIncome < 12069.00) {
             federalTax = 0;
-            temp = taxableIncome - 12069.00;
-        } else if (temp < 47630.00) {
-            federalTax = (temp * 0.15);
-            temp = temp - federalTax;
-        } else if (temp < 95259.00) {
-            federalTax = (temp * 0.205); //20.50%
-            temp = temp - federalTax;
-        } else if (temp < 147667.00) {
-            federalTax = (temp * 0.26); //26%
-            temp = temp - federalTax;
-        } else if (temp < 210371.00) {
-            federalTax = (temp * 0.29);//29%
-            temp = temp - federalTax;
+            mTemp = taxableIncome - 12069.00;
+        } else if (mTemp < 47630.00) {
+            federalTax = (mTemp * 0.15);
+            mTemp = mTemp - federalTax;
+        } else if (mTemp < 95259.00) {
+            federalTax = (mTemp * 0.205); //20.50%
+            mTemp = mTemp - federalTax;
+        } else if (mTemp < 147667.00) {
+            federalTax = (mTemp * 0.26); //26%
+            mTemp = mTemp - federalTax;
+        } else if (mTemp < 210371.00) {
+            federalTax = (mTemp * 0.29);//29%
+            mTemp = mTemp - federalTax;
         } else {
-            federalTax = (temp * 0.33);//33%
-            temp = temp - federalTax;
+            federalTax = (mTemp * 0.33);//33%
+            mTemp = mTemp - federalTax;
         }
         return federalTax;
     }
     public  double calcProvincialTax(){
         //calculate provincial tax
+        double mTemp = taxableIncome ;
+
+        if(mTemp <= 10582.00){
+            provincialTax = 0;
+            mTemp = taxableIncome - 10582.00;
+        }
+        if(mTemp >= 10582.01){
+            provincialTax = (mTemp * 0.0505); //5.05%
+            mTemp = mTemp - 33323.99;
+        }
+        if(mTemp >= 43906.01){
+            provincialTax = (mTemp * 0.0915); //9.15%
+            mTemp = mTemp - 43906.99;
+        }
+        if(mTemp >= 87813.01){
+            provincialTax = (mTemp * 0.1116); //11.16%
+            mTemp = mTemp - 62187.99;
+        }
+        if (mTemp >= 150000.01){
+            provincialTax = (mTemp * 0.1216);//12.16%
+            mTemp = mTemp - 69999.99;
+        }
+        if(mTemp >= 220000.01){
+            provincialTax = (mTemp * 0.1316);//13.16%
+
+        }
         return provincialTax;
     }
     public  double calTaxPaid()

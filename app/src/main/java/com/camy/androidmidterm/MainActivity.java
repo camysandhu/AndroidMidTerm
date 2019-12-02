@@ -138,22 +138,22 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void radioAction()
-    {
-        rgMain.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if(checkedId == R.id.rbXmlMale){
-                    choosingGender = rbMale.getText().toString();
-                }else if(checkedId == R.id.rbFemale){
-                   choosingGender = rbFMale.getText().toString();
-                }else {
-                    choosingGender = rbOthers.getText().toString();
-                }
-            }
-
-        });
-    }
+//    public void radioAction()
+//    {
+//        rgMain.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(RadioGroup group, int checkedId) {
+//                if(checkedId == R.id.rbXmlMale){
+//                    choosingGender = rbMale.getText().toString();
+//                }else if(checkedId == R.id.rbFemale){
+//                   choosingGender = rbFMale.getText().toString();
+//                }else {
+//                    choosingGender = rbOthers.getText().toString();
+//                }
+//            }
+//
+//        });
+//    }
 
     public void calculateAll()
     {
