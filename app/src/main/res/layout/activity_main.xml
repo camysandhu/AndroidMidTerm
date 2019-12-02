@@ -122,6 +122,14 @@
                 android:hint="TaxFillingDate"
                 android:inputType="date"
                 android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtRRSPContributed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="RRSP Contributed"
+                android:inputType="numberDecimal"
+                android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
