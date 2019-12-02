@@ -126,4 +126,10 @@ public class MainActivity extends AppCompatActivity {
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
         txtDateOfBirth.setText(sdf.format(calendar.getTime()));
     }
+
+    private void dateFormatTax() {
+        String myFormat = "dd-MMM-yyyy"; //In which you need put here
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+        taxFilling.setText(sdf.format(calendarTax.getTime()));
+    }
 }
