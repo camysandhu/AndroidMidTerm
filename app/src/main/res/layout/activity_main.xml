@@ -83,6 +83,30 @@
                 android:text="Gender"
                 android:textStyle="bold" />
 
+            <RadioGroup
+                android:id="@+id/rgGender"
+                android:layout_width="match_parent"
+                android:layout_height="95dp">
+
+                <RadioButton
+                    android:id="@+id/rbMale"
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:text="Male" />
+
+                <RadioButton
+                    android:id="@+id/rbFemale"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:text="Female" />
+
+                <RadioButton
+                    android:id="@+id/rbOthers"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:text="Others" />
+            </RadioGroup>
+
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
