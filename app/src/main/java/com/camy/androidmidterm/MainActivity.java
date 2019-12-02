@@ -1,7 +1,9 @@
 package com.camy.androidmidterm;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,10 +11,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -182,7 +187,10 @@ public class MainActivity extends AppCompatActivity {
 
                     if (edSIN.getText().toString().length() <= 0  && fnm.getText().toString().length() <= 0 && lnm.getText().toString().length() <= 0  && rrspMain.getText().toString().length() <= 0  && grossIncome.getText().toString().length() <= 0)
                     {
-                        Toast.makeText(MainActivity.this, "FillUp All details", Toast.LENGTH_SHORT).show();
+                       // Toast.makeText(MainActivity.this, "Please FillUp All details", Toast.LENGTH_SHORT).show();
+                        //Snackbar.make(getActivity().getWindow().getDecorView().getRootView(), "Testing Snackbar", Snackbar.LENGTH_LONG).show();
+                        Snackbar.make(v,"Please FillUp All details",Snackbar.LENGTH_SHORT).show();
+                        //Snackbar.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorPrimaryDark));
                     }
                     else
                         {
@@ -204,6 +212,10 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 }
+
+            private Activity getActivity() {
+                return null;
+            }
 
         });
     }
