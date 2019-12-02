@@ -88,6 +88,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        final DatePickerDialog.OnDateSetListener date1 = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                  int dayOfMonth)
+            {
+
+                calendarTax.set(Calendar.YEAR, year);
+                calendarTax.set(Calendar.MONTH, monthOfYear);
+                calendarTax.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                // DatePicker.getDatePicker().setMaxDate(System.currentTimeMillis());
+                // datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
+                dateFormatTax();
+            }
+        };
+
 
     }
 
