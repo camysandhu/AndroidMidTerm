@@ -139,6 +139,15 @@
                 android:hint="Gross Income"
                 android:inputType="number"
                 android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnCalculate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Calculate" />
+
+
+
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
