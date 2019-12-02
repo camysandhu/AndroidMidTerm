@@ -107,6 +107,15 @@
                     android:text="Others" />
             </RadioGroup>
 
+            <EditText
+                android:id="@+id/txtAge"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Age"
+                android:inputType="number"
+                android:textStyle="bold" />
+
+
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
