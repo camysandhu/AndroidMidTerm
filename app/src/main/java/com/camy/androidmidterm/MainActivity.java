@@ -60,7 +60,8 @@ public class MainActivity extends AppCompatActivity {
         rrspMain = findViewById(R.id.txtRRSPContributed);
         grossIncome = findViewById(R.id.edGrossIncome);
 
-
+        radioAction();
+        calculateAll();
 
         final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -119,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    
+
 
     public void radioAction()
     {
