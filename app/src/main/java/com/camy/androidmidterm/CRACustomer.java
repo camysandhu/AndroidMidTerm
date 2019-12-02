@@ -41,6 +41,20 @@ public class CRACustomer implements Parcelable
         taxableIncome = in.readDouble();
         taxPaid = in.readDouble();
     }
+    public CRACustomer(Integer sinNumber, Integer age, String fName, String lName, String gender, String dateOfBirth, String taxFillingDate, double grossIncome, double rrspContri) {
+        this.sinNumber = sinNumber;
+        this.age = age;
+        this.fName = fName;
+        this.lName = lName;
+        this.fullName = fullName;
+        this.gender = gender;
+        this.dateOfBirth = dateOfBirth;
+        this.taxFillingDate = taxFillingDate;
+        this.grossIncome = grossIncome;
+        this.rrspContri = rrspContri;
+    }
+
+
 
     public static final Creator<CRACustomer> CREATOR = new Creator<CRACustomer>() {
         @Override
