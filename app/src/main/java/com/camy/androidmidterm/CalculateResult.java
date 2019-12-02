@@ -127,17 +127,17 @@ public class CalculateResult extends AppCompatActivity {
         //Toast.makeText(this, "(Double)taxableIncome" + taxableIncome, Toast.LENGTH_SHORT).show();
         txtTaxableIncome.setText("Taxable income:\t" + (double) taxableIncome);
         //federal tax
-        double calFederal = calcFedralTax();
+        double calFederal = calculateFedralTax();
         txtDfederalTax.setText("Federal Tax: \t" + calFederal);
         // Provincial Tax
-        double calProvincial = calcProvincialTax();
+        double calProvincial = calculateProvincialTax();
         txtDprovincialTax.setText("Provincial Tax:\t" + calProvincial);
         // total tax paid
-        double taxpaid = calTaxPaid();
+        double taxpaid = calculateTaxPaid();
         txtTaxPaid.setText("Total tax Paid:\t" + taxpaid);
     }
 
-    public double calcCpp(){
+    public double calculateCpp(){
         // calculate  cpp
         if(calCRA.getGrossIncome() > 57000.00){
             cpp = (57000.00 * (5.10 / 100));
@@ -146,7 +146,7 @@ public class CalculateResult extends AppCompatActivity {
         }
         return cpp;
     }
-    public double calcFedralTax() {
+    public double calculateFedralTax() {
         //calculate federal tax
         double mTemp = taxableIncome ;
         if(mTemp <= 12069.00){
@@ -175,7 +175,7 @@ public class CalculateResult extends AppCompatActivity {
         }
         return federalTax;
     }
-    public  double calcProvincialTax(){
+    public  double calculateProvincialTax(){
         //calculate provincial tax
         double mTemp = taxableIncome ;
 
@@ -205,8 +205,9 @@ public class CalculateResult extends AppCompatActivity {
         }
         return provincialTax;
     }
-    public  double calTaxPaid()
+    public  double calculateTaxPaid()
     {
+        totalTaxPaid = federalTax + provincialTax;
         return totalTaxPaid;
     }
 }
