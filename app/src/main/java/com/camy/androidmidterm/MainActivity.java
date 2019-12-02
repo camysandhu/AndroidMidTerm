@@ -104,7 +104,22 @@ public class MainActivity extends AppCompatActivity {
         };
 
 
+        taxFilling.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                new DatePickerDialog(MainActivity.this, date1, calendarTax
+                        .get(Calendar.YEAR), calendarTax.get(Calendar.MONTH),
+                        calendarTax.get(Calendar.DAY_OF_MONTH)).show();
+
+
+            }
+        });
+
     }
+
+
+    
 
     public void radioAction()
     {
