@@ -187,13 +187,32 @@ public class MainActivity extends AppCompatActivity {
 
                     //https://stackoverflow.com/questions/27086808/android-check-null-or-empty-string-in-android
 
-                    if (edSIN.getText().toString().length() <= 0  && fnm.getText().toString().length() <= 0 && lnm.getText().toString().length() <= 0  && rrspMain.getText().toString().length() <= 0  && grossIncome.getText().toString().length() <= 0)
-                    {
-                       // Toast.makeText(MainActivity.this, "Please FillUp All details", Toast.LENGTH_SHORT).show();
-                        //Snackbar.make(getActivity().getWindow().getDecorView().getRootView(), "Testing Snackbar", Snackbar.LENGTH_LONG).show();
-                        Snackbar.make(v,"Please FillUp All details",Snackbar.LENGTH_SHORT).show();
-                        //Snackbar.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorPrimaryDark));
-                    }
+                           if (edSIN.getText().toString().length() <= 0)
+                              {
+                                Snackbar.make(v,"Please FillUp All details",Snackbar.LENGTH_SHORT).show();
+                              }
+                            if( fnm.getText().toString().length() <= 0)
+                            {
+                                Snackbar.make(v,"Please FillUp All details",Snackbar.LENGTH_SHORT).show();
+                            }
+                            if (lnm.getText().toString().length() <= 0)
+                            {
+                                Snackbar.make(v,"Please FillUp All details",Snackbar.LENGTH_SHORT).show();
+                            }
+                             if (rrspMain.getText().toString().length() <= 0)
+                            {
+                                Snackbar.make(v,"Please FillUp All details",Snackbar.LENGTH_SHORT).show();
+                            }
+                            if (grossIncome.getText().toString().length() <= 0)
+                            {
+                                Snackbar.make(v,"Please FillUp All details",Snackbar.LENGTH_SHORT).show();
+                            }
+//                    {
+//                       // Toast.makeText(MainActivity.this, "Please FillUp All details", Toast.LENGTH_SHORT).show();
+//                        //Snackbar.make(getActivity().getWindow().getDecorView().getRootView(), "Testing Snackbar", Snackbar.LENGTH_LONG).show();
+//                        Snackbar.make(v,"Please FillUp All details",Snackbar.LENGTH_SHORT).show();
+//                        //Snackbar.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorPrimaryDark));
+//                    }
                     else
                         {
 //                            String age= dateFormattar();
