@@ -78,6 +78,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/txtGender"
                 android:layout_width="match_parent"
                 android:layout_height="32dp"
                 android:text="Gender"
@@ -89,21 +90,24 @@
                 android:layout_height="95dp">
 
                 <RadioButton
-                    android:id="@+id/rbMale"
+                    android:id="@+id/rbXmlMale"
                     android:layout_width="match_parent"
                     android:layout_height="34dp"
+                    android:onClick="checkedButton"
                     android:text="Male" />
 
                 <RadioButton
                     android:id="@+id/rbFemale"
                     android:layout_width="match_parent"
                     android:layout_height="27dp"
+                    android:onClick="checkedButton"
                     android:text="Female" />
 
                 <RadioButton
                     android:id="@+id/rbOthers"
                     android:layout_width="match_parent"
                     android:layout_height="36dp"
+                    android:onClick="checkedButton"
                     android:text="Others" />
             </RadioGroup>
 
