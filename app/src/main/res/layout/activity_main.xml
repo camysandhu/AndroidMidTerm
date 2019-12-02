@@ -131,6 +131,7 @@
                 android:id="@+id/txtRRSPContributed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_action_name_dollar"
                 android:hint="RRSP Contributed"
                 android:inputType="numberDecimal"
                 android:textStyle="bold" />
@@ -139,6 +140,7 @@
                 android:id="@+id/edGrossIncome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_action_name_dollar"
                 android:ems="10"
                 android:hint="Gross Income"
                 android:inputType="number"

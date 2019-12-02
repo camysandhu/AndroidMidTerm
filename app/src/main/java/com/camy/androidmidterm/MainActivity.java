@@ -264,12 +264,12 @@ public class MainActivity extends AppCompatActivity {
         LocalDate l = LocalDate.of(calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
         LocalDate now = LocalDate.now(); //gets localDate
         Period diff = Period.between(l, now); //difference between the dates is calculated
-        System.out.println(diff.getYears() + "years" + diff.getMonths() + "months" + diff.getDays() + "days");
+
 
         String n1=String.valueOf(diff.getYears());
         String n2=String.valueOf(diff.getMonths());
         String n3=String.valueOf(diff.getDays());
-        String age="Age: "+n1+"Years"+n2+"Months"+n3+"Days";
+        String age="Age: "+n1+"Years, "+n2+"Months, "+n3+"Days";
 
 
         mainAge.setText(age);
