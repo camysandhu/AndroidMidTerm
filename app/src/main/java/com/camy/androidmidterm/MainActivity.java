@@ -174,7 +174,11 @@ public class MainActivity extends AppCompatActivity {
         btnCal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
+            { if(edSIN != null && fnm !=null && lnm !=null && mainAge != null &&  rrspMain != null && grossIncome != null )
             {
+                Toast.makeText(MainActivity.this, "FillUp All details", Toast.LENGTH_SHORT).show();
+            }
+            else {
 
                 CRACustomer cra = new CRACustomer(Integer.parseInt(edSIN.getText().toString()),
                         Integer.parseInt(mainAge.getText().toString()),
@@ -190,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
                 mIntent.putExtra("CRACustomer", cra);
 //                      mIntent.putExtra("gender", radio);
                 startActivity(mIntent);
-
+            }
 
             }
         });
