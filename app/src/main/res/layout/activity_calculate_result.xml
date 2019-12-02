@@ -91,7 +91,71 @@
                 android:hint="GrossIncome"
                 android:inputType="numberDecimal"
                 android:textStyle="bold" />
+            <TextView
+                android:id="@+id/txtCalFederalTax"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:hint="FederalTax"
+                android:inputType="numberDecimal"
+                android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/txtCalProvincialTax"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:hint="ProvincialTax"
+                android:inputType="numberDecimal"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtCalCPP"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:hint="CPP"
+                android:inputType="numberDecimal"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtCalEI"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:hint="Employment Insurance"
+                android:inputType="numberDecimal"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/txtCalRRSPContributed"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="RRSP Contributed"
+                android:inputType="numberDecimal"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtCalCarryForwardRRSP"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:hint="Carry forward RRSP"
+                android:inputType="numberDecimal"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtCalTotalTaxableIncome"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:hint="Total Taxable Income"
+                android:inputType="numberDecimal"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/txtCalTotalTaxPaid"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:hint="Total Tax Paid"
+                android:inputType="numberDecimal"
+                android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
 
