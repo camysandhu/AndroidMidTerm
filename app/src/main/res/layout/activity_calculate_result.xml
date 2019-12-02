@@ -70,6 +70,15 @@
                 android:hint="Gender"
                 android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/txtCalDOB"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:textColor="@android:color/holo_red_dark"
+                android:hint="DOB"
+                android:textStyle="bold" />
+
+
 
         </LinearLayout>
     </ScrollView>
