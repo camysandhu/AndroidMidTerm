@@ -63,6 +63,14 @@
                 android:hint="Age"
                 android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/calRadioGender"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:hint="Gender"
+                android:textStyle="bold" />
+
+
         </LinearLayout>
     </ScrollView>
 
