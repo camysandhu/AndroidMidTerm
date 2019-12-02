@@ -13,7 +13,9 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -118,5 +120,10 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+    private void dateFormat() {
+        String myFormat = "dd-MMM-yyyy"; //In which you need put here
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+        txtDateOfBirth.setText(sdf.format(calendar.getTime()));
     }
 }
