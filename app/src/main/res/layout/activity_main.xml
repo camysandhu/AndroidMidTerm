@@ -130,6 +130,15 @@
                 android:hint="RRSP Contributed"
                 android:inputType="numberDecimal"
                 android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edGrossIncome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Gross Income"
+                android:inputType="number"
+                android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
