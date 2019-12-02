@@ -88,6 +88,8 @@ public class MainActivity extends AppCompatActivity {
                 new DatePickerDialog(MainActivity.this, date, calendar
                         .get(Calendar.YEAR), calendar.get(Calendar.MONTH),
                         calendar.get(Calendar.DAY_OF_MONTH)).show();
+
+               // mainAge.setText("Age: " + txtDateOfBirth.getText().toString());
 //                datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
             }
         });
@@ -173,30 +175,36 @@ public class MainActivity extends AppCompatActivity {
 
         btnCal.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            { if(edSIN != null && fnm !=null && lnm !=null && mainAge != null &&  rrspMain != null && grossIncome != null )
-            {
-                Toast.makeText(MainActivity.this, "FillUp All details", Toast.LENGTH_SHORT).show();
-            }
-            else {
+            public void onClick(View v) {
+//
 
-                CRACustomer cra = new CRACustomer(Integer.parseInt(edSIN.getText().toString()),
-                        Integer.parseInt(mainAge.getText().toString()),
-                        fnm.getText().toString(),
-                        lnm.getText().toString(),
-                        choosingGender,
-                        txtDateOfBirth.getText().toString(),
-                        taxFilling.getText().toString(),
-                        Double.parseDouble(grossIncome.getText().toString()),
-                        Double.parseDouble(rrspMain.getText().toString()));
+                    //https://stackoverflow.com/questions/27086808/android-check-null-or-empty-string-in-android
 
-                Intent mIntent = new Intent(MainActivity.this, CalculateResult.class);
-                mIntent.putExtra("CRACustomer", cra);
+                    if (edSIN.getText().toString().length() <= 0  && fnm.getText().toString().length() <= 0 && lnm.getText().toString().length() <= 0  && rrspMain.getText().toString().length() <= 0  && grossIncome.getText().toString().length() <= 0)
+                    {
+                        Toast.makeText(MainActivity.this, "FillUp All details", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                        {
+
+                        CRACustomer cra = new CRACustomer(Integer.parseInt(edSIN.getText().toString()),
+                                Integer.parseInt(mainAge.getText().toString()),
+                                fnm.getText().toString(),
+                                lnm.getText().toString(),
+                                choosingGender,
+                                txtDateOfBirth.getText().toString(),
+                                taxFilling.getText().toString(),
+                                Double.parseDouble(grossIncome.getText().toString()),
+                                Double.parseDouble(rrspMain.getText().toString()));
+
+                        Intent mIntent = new Intent(MainActivity.this, CalculateResult.class);
+                        mIntent.putExtra("CRACustomer", cra);
 //                      mIntent.putExtra("gender", radio);
-                startActivity(mIntent);
-            }
+                        startActivity(mIntent);
 
-            }
+                    }
+                }
+
         });
     }
     private void dateFormat() {
