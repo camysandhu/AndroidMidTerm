@@ -84,6 +84,13 @@
                 android:layout_height="32dp"
                 android:hint="TaxFillingDate"
                 android:textStyle="bold" />
+            <TextView
+                android:id="@+id/txtCalGrossIncome"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:hint="GrossIncome"
+                android:inputType="numberDecimal"
+                android:textStyle="bold" />
 
         </LinearLayout>
     </ScrollView>
