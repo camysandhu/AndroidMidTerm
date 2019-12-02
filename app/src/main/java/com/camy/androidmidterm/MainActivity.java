@@ -196,21 +196,31 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else
                         {
+                            String age= dateFormattar();
+                            if(Integer.parseInt(age)<18)
+                            {
+                                btnCal.setAlpha(.5f);
+                                btnCal.setClickable(false);
 
-                        CRACustomer cra = new CRACustomer(Integer.parseInt(edSIN.getText().toString()),
-                                Integer.parseInt(mainAge.getText().toString()),
-                                fnm.getText().toString(),
-                                lnm.getText().toString(),
-                                choosingGender,
-                                txtDateOfBirth.getText().toString(),
-                                taxFilling.getText().toString(),
-                                Double.parseDouble(grossIncome.getText().toString()),
-                                Double.parseDouble(rrspMain.getText().toString()));
+                            }
+                            else {
 
-                        Intent mIntent = new Intent(MainActivity.this, CalculateResult.class);
-                        mIntent.putExtra("CRACustomer", cra);
+
+                                CRACustomer cra = new CRACustomer(Integer.parseInt(edSIN.getText().toString()),
+                                        Integer.parseInt(mainAge.getText().toString()),
+                                        fnm.getText().toString(),
+                                        lnm.getText().toString(),
+                                        choosingGender,
+                                        txtDateOfBirth.getText().toString(),
+                                        taxFilling.getText().toString(),
+                                        Double.parseDouble(grossIncome.getText().toString()),
+                                        Double.parseDouble(rrspMain.getText().toString()));
+
+                                Intent mIntent = new Intent(MainActivity.this, CalculateResult.class);
+                                mIntent.putExtra("CRACustomer", cra);
 //                      mIntent.putExtra("gender", radio);
-                        startActivity(mIntent);
+                                startActivity(mIntent);
+                            }
 
                     }
                 }
