@@ -15,6 +15,45 @@ public class CRACustomer implements Parcelable
     double grossIncome, federalTax, provicialTax, empInsurance;
     double rrspContri, rrspCarryForward, taxableIncome, taxPaid;
 
+    protected CRACustomer(Parcel in) {
+        if (in.readByte() == 0) {
+            sinNumber = null;
+        } else {
+            sinNumber = in.readInt();
+        }
+        if (in.readByte() == 0) {
+            age = null;
+        } else {
+            age = in.readInt();
+        }
+        fName = in.readString();
+        lName = in.readString();
+        fullName = in.readString();
+        gender = in.readString();
+        dateOfBirth = in.readString();
+        taxFillingDate = in.readString();
+        grossIncome = in.readDouble();
+        federalTax = in.readDouble();
+        provicialTax = in.readDouble();
+        empInsurance = in.readDouble();
+        rrspContri = in.readDouble();
+        rrspCarryForward = in.readDouble();
+        taxableIncome = in.readDouble();
+        taxPaid = in.readDouble();
+    }
+
+    public static final Creator<CRACustomer> CREATOR = new Creator<CRACustomer>() {
+        @Override
+        public CRACustomer createFromParcel(Parcel in) {
+            return new CRACustomer(in);
+        }
+
+        @Override
+        public CRACustomer[] newArray(int size) {
+            return new CRACustomer[size];
+        }
+    };
+
     public Integer getSinNumber() {
         return sinNumber;
     }
@@ -150,6 +189,31 @@ public class CRACustomer implements Parcelable
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-
+        if (sinNumber == null) {
+            parcel.writeByte((byte) 0);
+        } else {
+            parcel.writeByte((byte) 1);
+            parcel.writeInt(sinNumber);
+        }
+        if (age == null) {
+            parcel.writeByte((byte) 0);
+        } else {
+            parcel.writeByte((byte) 1);
+            parcel.writeInt(age);
+        }
+        parcel.writeString(fName);
+        parcel.writeString(lName);
+        parcel.writeString(fullName);
+        parcel.writeString(gender);
+        parcel.writeString(dateOfBirth);
+        parcel.writeString(taxFillingDate);
+        parcel.writeDouble(grossIncome);
+        parcel.writeDouble(federalTax);
+        parcel.writeDouble(provicialTax);
+        parcel.writeDouble(empInsurance);
+        parcel.writeDouble(rrspContri);
+        parcel.writeDouble(rrspCarryForward);
+        parcel.writeDouble(taxableIncome);
+        parcel.writeDouble(taxPaid);
     }
 }
