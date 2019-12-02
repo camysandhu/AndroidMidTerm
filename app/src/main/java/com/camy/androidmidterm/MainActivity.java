@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -54,5 +55,38 @@ public class MainActivity extends AppCompatActivity {
         rrspMain = findViewById(R.id.txtRRSPContributed);
         grossIncome = findViewById(R.id.edGrossIncome);
 
+    }
+
+    public void radioAction()
+    {
+        rgMain.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId)
+            {
+
+                if(checkedId==R.id.rbMale)
+                {
+                    radio = rbMale.getText().toString();
+                    Toast.makeText(getApplicationContext(),"Male",Toast.LENGTH_SHORT).show();
+                    rbMale.setSelected(true);
+                }
+                else if(checkedId==R.id.rbFemale)
+                {
+
+                    radio = rbFMale.getText().toString();
+                    Toast.makeText(getApplicationContext(),"Female",Toast.LENGTH_SHORT).show();
+                    rbFMale.setSelected(true);
+                    //rbFMale.setText("Female!");
+                }
+                else if(checkedId==R.id.rbOthers)
+                {
+
+                    radio = rbOthers.getText().toString();
+                    Toast.makeText(getApplicationContext(),"Others",Toast.LENGTH_SHORT).show();
+                    rbOthers.setSelected(true);
+                    // rbOthers.setText("Others!");
+                }
+            }
+        });
     }
 }
