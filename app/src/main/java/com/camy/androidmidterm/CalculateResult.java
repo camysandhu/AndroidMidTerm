@@ -148,25 +148,30 @@ public class CalculateResult extends AppCompatActivity {
     }
     public double calcFedralTax() {
         //calculate federal tax
-        double mTemp = taxableIncome;
-        if (taxableIncome < 12069.00) {
-            federalTax = 0;
+        double mTemp = taxableIncome ;
+        if(mTemp <= 12069.00){
+            federalTax = 0;//0%
             mTemp = taxableIncome - 12069.00;
-        } else if (mTemp < 47630.00) {
-            federalTax = (mTemp * 0.15);
-            mTemp = mTemp - federalTax;
-        } else if (mTemp < 95259.00) {
+        }
+        if(mTemp >= 12069.01){
+            federalTax = (mTemp * 0.15);//15%
+            mTemp = mTemp - 35561;
+        }
+        if(mTemp >= 47630.01){
             federalTax = (mTemp * 0.205); //20.50%
-            mTemp = mTemp - federalTax;
-        } else if (mTemp < 147667.00) {
+            mTemp = mTemp - 47628.99;
+        }
+        if(mTemp >= 95259.01){
             federalTax = (mTemp * 0.26); //26%
-            mTemp = mTemp - federalTax;
-        } else if (mTemp < 210371.00) {
+            mTemp = mTemp - 52407.99;
+        }
+        if (mTemp >= 147667.01){
             federalTax = (mTemp * 0.29);//29%
-            mTemp = mTemp - federalTax;
-        } else {
+            mTemp = mTemp - 62703.99;
+        }
+        if(mTemp >= 210371.01){
             federalTax = (mTemp * 0.33);//33%
-            mTemp = mTemp - federalTax;
+            //mTemp = mTemp - federalTax;
         }
         return federalTax;
     }
