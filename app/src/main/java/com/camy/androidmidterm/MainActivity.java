@@ -3,7 +3,9 @@ package com.camy.androidmidterm;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -86,6 +88,34 @@ public class MainActivity extends AppCompatActivity {
                     rbOthers.setSelected(true);
                     // rbOthers.setText("Others!");
                 }
+            }
+        });
+    }
+
+    public void calculateAll()
+    {
+
+        btnCal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+
+                CRACustomer cra = new CRACustomer(Integer.parseInt(edSIN.getText().toString()),
+                        Integer.parseInt(mainAge.getText().toString()),
+                        fnm.getText().toString(),
+                        lnm.getText().toString(),
+                        rgMain.toString(),
+                        txtDateOfBirth.getText().toString(),
+                        taxFilling.getText().toString(),
+                        Double.parseDouble(grossIncome.getText().toString()),
+                        Double.parseDouble(rrspMain.getText().toString()));
+
+                Intent mIntent = new Intent(MainActivity.this, CalculateResult.class);
+                mIntent.putExtra("CRACustomer", cra);
+//                      mIntent.putExtra("gender", radio);
+                startActivity(mIntent);
+
+
             }
         });
     }
