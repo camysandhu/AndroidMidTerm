@@ -106,6 +106,19 @@ public class MainActivity extends AppCompatActivity {
                 dateFormatTax();
             }
         };
+//        rgMain.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(RadioGroup group, int checkedId) {
+//                if(checkedId == R.id.rbXmlMale){
+//                    choosingGender = rbMale.getText().toString();
+//                }else if(checkedId == R.id.rbFemale){
+//                    choosingGender = rbFMale.getText().toString();
+//                }else {
+//                    choosingGender = rbOthers.getText().toString();
+//                }
+//            }
+//
+//        });
         rgMain.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -167,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
                         Integer.parseInt(mainAge.getText().toString()),
                         fnm.getText().toString(),
                         lnm.getText().toString(),
-                        rgMain.toString(),
+                        choosingGender,
                         txtDateOfBirth.getText().toString(),
                         taxFilling.getText().toString(),
                         Double.parseDouble(grossIncome.getText().toString()),
