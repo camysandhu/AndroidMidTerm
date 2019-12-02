@@ -1,6 +1,9 @@
 package com.camy.androidmidterm;
 
-public class CRACustomer
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class CRACustomer implements Parcelable
 {
     Integer sinNumber;
     Integer age;
@@ -138,5 +141,15 @@ public class CRACustomer
 
     public void setTaxPaid(double taxPaid) {
         this.taxPaid = taxPaid;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+
     }
 }
