@@ -129,7 +129,7 @@ public class CalculateResult extends AppCompatActivity {
         //taxable income
         taxableIncome = grossIncome - (cpp + ei + rrsp);
         //Toast.makeText(this, "(Double)taxableIncome" + taxableIncome, Toast.LENGTH_SHORT).show();
-        txtTaxableIncome.setText("Taxable income:\t" + (double) taxableIncome);
+        txtTaxableIncome.setText("Taxable income:\t" + numberFormat.format(taxableIncome));
         //federal tax
         double calFederal = calculateFedralTax();
         txtDfederalTax.setText("Federal Tax: \t" + numberFormat.format(calFederal));
