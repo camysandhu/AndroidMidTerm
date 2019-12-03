@@ -225,13 +225,15 @@ public class MainActivity extends AppCompatActivity {
 //                            }
 //                            else {
 
-
+                            SimpleDateFormat sm=new SimpleDateFormat("dd-MMM-yyyy", Locale.US);
+                            Calendar myCalendar = Calendar.getInstance();
+                            String currentDate=sm.format(myCalendar.getTime());
                                 CRACustomer cra = new CRACustomer(Integer.parseInt(edSIN.getText().toString()), mainAge.getText().toString(),
                                         fnm.getText().toString(),
                                         lnm.getText().toString(),
                                         choosingGender,
                                         txtDateOfBirth.getText().toString(),
-                                        taxFilling.getText().toString(),
+                                        currentDate,
                                         Double.parseDouble(grossIncome.getText().toString()),
                                         Double.parseDouble(rrspMain.getText().toString()));
 
