@@ -62,14 +62,14 @@ public class CalculateResult extends AppCompatActivity {
 
         double pGrossIncome = calCRA.getGrossIncome();
 
-        calSIN.setText("SIN: " + calCRA.getSinNumber());
-        calculatedfullName.setText("FullName: " + calCRA.getFullName());
+        calSIN.setText("SIN:-- " + calCRA.getSinNumber());
+        calculatedfullName.setText("FULLNAME:-- " + calCRA.getFullName());
         calAge.setText(calCRA.getAge());
-        calGender.setText("Gender: " + calCRA.getGender());
-        calDOB.setText("DOB: " + calCRA.getDateOfBirth());
-        calTaxFillingDate.setText("TaxFillingDate: "+ calCRA.getTaxFillingDate());
-        txtDgrossIncome.setText("Gross Income:  \t" + numberFormat.format(pGrossIncome));
-        txtRRSPContribution.setText("RRSP Contributed: \t" + numberFormat.format(calCRA.getRrspContri()));
+        calGender.setText("GENDER:-- " + calCRA.getGender());
+        calDOB.setText("DOB:-- " + calCRA.getDateOfBirth());
+        calTaxFillingDate.setText("TAX FILLIN GDATE:-- "+ calCRA.getTaxFillingDate());
+        txtDgrossIncome.setText("GROSS INCOME:--  \t" + numberFormat.format(pGrossIncome));
+        txtRRSPContribution.setText("RRSP CONTRIBUTED:-- \t" + numberFormat.format(calCRA.getRrspContri()));
         performLogic();
 
     }
@@ -108,14 +108,14 @@ public class CalculateResult extends AppCompatActivity {
         {
             cpp = (grossIncome * 0.051);
         }
-        txtCPP.setText("CPP Contribution in Year:\t" + numberFormat.format(cpp));
+        txtCPP.setText("CPP CONTRIBUTION IN YEAR:--\t" + numberFormat.format(cpp));
         // calculate employement insurance
         if(grossIncome > 53100){
             ei = (53100 * 0.0162); //1.62%
         }else{
             ei = (grossIncome * (1.62/100));
         }
-        txtEmpInsurance.setText("Employeement Insurance: \t" + numberFormat.format(ei));
+        txtEmpInsurance.setText("EMPLOYMENT INSURANCE:-- \t" + numberFormat.format(ei));
         // calculate RRSP
         rrsp = calCRA.getRrspContri();
         double maxRRSP = (grossIncome * 0.18); //18%
@@ -125,20 +125,20 @@ public class CalculateResult extends AppCompatActivity {
         }else{
             rrsp = rrsp;
         }
-        txtRRSPCarryForward.setText("RRSP Carry forward: \t"+ numberFormat.format(rrspCf));
+        txtRRSPCarryForward.setText("RRSP CARRY FORWARD:-- \t"+ numberFormat.format(rrspCf));
         //taxable income
         taxableIncome = grossIncome - (cpp + ei + rrsp);
         //Toast.makeText(this, "(Double)taxableIncome" + taxableIncome, Toast.LENGTH_SHORT).show();
-        txtTaxableIncome.setText("Taxable income:\t" + numberFormat.format(taxableIncome));
+        txtTaxableIncome.setText("TAXABLE INCOME:--\t" + numberFormat.format(taxableIncome));
         //federal tax
         double calFederal = calculateFedralTax();
-        txtDfederalTax.setText("Federal Tax: \t" + numberFormat.format(calFederal));
+        txtDfederalTax.setText("FEDERAL TAX:-- \t" + numberFormat.format(calFederal));
         // Provincial Tax
         double calProvincial = calculateProvincialTax();
-        txtDprovincialTax.setText("Provincial Tax:\t" + numberFormat.format(calProvincial));
+        txtDprovincialTax.setText("PROVINCIAL TAX:--\t" + numberFormat.format(calProvincial));
         // total tax paid
         double taxpaid = calculateTaxPaid();
-        txtTaxPaid.setText("Total tax Paid:\t" + numberFormat.format(taxpaid));
+        txtTaxPaid.setText("TOTAL TAX PAID:--\t" + numberFormat.format(taxpaid));
     }
 
     public double calculateCpp(){
