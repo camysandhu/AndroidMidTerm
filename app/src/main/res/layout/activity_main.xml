@@ -121,7 +121,7 @@
             <TextView
                 android:id="@+id/txtFillingDate"
                 android:layout_width="match_parent"
-                android:layout_height="32dp"
+                android:layout_height="1dp"
                 android:hint="TaxFillingDate"
                 android:inputType="date"
                 android:textStyle="bold" />
