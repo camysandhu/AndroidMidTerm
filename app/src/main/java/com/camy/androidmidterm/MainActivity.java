@@ -213,37 +213,37 @@ public class MainActivity extends AppCompatActivity {
 //                        Snackbar.make(v,"Please FillUp All details",Snackbar.LENGTH_SHORT).show();
 //                        //Snackbar.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorPrimaryDark));
 //                    }
-                    else
-                        {
-//                            String age= dateFormattar();
-//                            if(Integer.parseInt(age)<18)
-//                            {
-//                                btnCal.setAlpha(.5f);
-//                                btnCal.setClickable(false);
-//
-//
-//                            }
-//                            else {
+                    else {
+                                String age = dateFormattar();
+                                if (Integer.parseInt(age) < 18) {
+                                    btnCal.setAlpha(.5f);
+                                    btnCal.setClickable(false);
 
-                            SimpleDateFormat sm=new SimpleDateFormat("dd-MMM-yyyy", Locale.US);
-                            Calendar myCalendar = Calendar.getInstance();
-                            String currentDate=sm.format(myCalendar.getTime());
-                                CRACustomer cra = new CRACustomer(Integer.parseInt(edSIN.getText().toString()), mainAge.getText().toString(),
-                                        fnm.getText().toString(),
-                                        lnm.getText().toString(),
-                                        choosingGender,
-                                        txtDateOfBirth.getText().toString(),
-                                        currentDate,
-                                        Double.parseDouble(grossIncome.getText().toString()),
-                                        Double.parseDouble(rrspMain.getText().toString()));
+                                }
 
-                                Intent mIntent = new Intent(MainActivity.this, CalculateResult.class);
-                                mIntent.putExtra("CRACustomer", cra);
+                                else
+                                    {
+                                        //btnCal.setClickable(true);
+
+                                    SimpleDateFormat sm = new SimpleDateFormat("dd-MMM-yyyy", Locale.US);
+                                    Calendar myCalendar = Calendar.getInstance();
+                                    String currentDate = sm.format(myCalendar.getTime());
+                                    CRACustomer cra = new CRACustomer(Integer.parseInt(edSIN.getText().toString()), mainAge.getText().toString(),
+                                            fnm.getText().toString(),
+                                            lnm.getText().toString(),
+                                            choosingGender,
+                                            txtDateOfBirth.getText().toString(),
+                                            currentDate,
+                                            Double.parseDouble(grossIncome.getText().toString()),
+                                            Double.parseDouble(rrspMain.getText().toString()));
+
+                                    Intent mIntent = new Intent(MainActivity.this, CalculateResult.class);
+                                    mIntent.putExtra("CRACustomer", cra);
 //                      mIntent.putExtra("gender", radio);
-                                startActivity(mIntent);
+                                    startActivity(mIntent);
+                                }
+
                             }
-
-
                 }
 
             private Activity getActivity() {
