@@ -6,7 +6,7 @@ import android.os.Parcelable;
 public class CRACustomer implements Parcelable
 {
     Integer sinNumber;
-    Integer age;
+    String age;
     String fName,lName;
     String fullName;
     String gender;
@@ -24,7 +24,7 @@ public class CRACustomer implements Parcelable
         if (in.readByte() == 0) {
             age = null;
         } else {
-            age = in.readInt();
+            age = in.readString();
         }
         fName = in.readString();
         lName = in.readString();
@@ -41,7 +41,7 @@ public class CRACustomer implements Parcelable
         taxableIncome = in.readDouble();
         taxPaid = in.readDouble();
     }
-    public CRACustomer(Integer sinNumber, Integer age, String fName, String lName, String gender, String dateOfBirth, String taxFillingDate, double grossIncome, double rrspContri) {
+    public CRACustomer(Integer sinNumber, String age, String fName, String lName, String gender, String dateOfBirth, String taxFillingDate, double grossIncome, double rrspContri) {
         this.sinNumber = sinNumber;
         this.age = age;
         this.fName = fName;
@@ -76,11 +76,11 @@ public class CRACustomer implements Parcelable
         this.sinNumber = sinNumber;
     }
 
-    public Integer getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
@@ -214,7 +214,7 @@ public class CRACustomer implements Parcelable
             parcel.writeByte((byte) 0);
         } else {
             parcel.writeByte((byte) 1);
-            parcel.writeInt(age);
+            parcel.writeString(age);
         }
         parcel.writeString(fName);
         parcel.writeString(lName);

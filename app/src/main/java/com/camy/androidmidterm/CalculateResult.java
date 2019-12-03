@@ -28,6 +28,7 @@ public class CalculateResult extends AppCompatActivity {
     private TextView txtTaxableIncome;
     private TextView txtTaxPaid;
 
+
     private double cpp = 0, ei = 0;  double rrsp = 0, rrspCf = 0, taxableIncome, federalTax,
             provincialTax, totalTaxPaid;
 
@@ -59,7 +60,7 @@ public class CalculateResult extends AppCompatActivity {
 
         calSIN.setText("SIN: " + calCRA.getSinNumber());
         calculatedfullName.setText("FullName: " + calCRA.getFullName());
-        calAge.setText("Age: " + calCRA.getAge());
+        calAge.setText(calCRA.getAge());
         calGender.setText("Gender: " + calCRA.getGender());
         calDOB.setText("DOB: " + calCRA.getDateOfBirth());
         calTaxFillingDate.setText("TaxFillingDate: "+ calCRA.getTaxFillingDate());

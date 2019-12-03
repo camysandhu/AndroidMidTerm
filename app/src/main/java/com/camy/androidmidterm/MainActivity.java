@@ -226,8 +226,7 @@ public class MainActivity extends AppCompatActivity {
 //                            else {
 
 
-                                CRACustomer cra = new CRACustomer(Integer.parseInt(edSIN.getText().toString()),
-                                        Integer.parseInt(mainAge.getText().toString()),
+                                CRACustomer cra = new CRACustomer(Integer.parseInt(edSIN.getText().toString()), mainAge.getText().toString(),
                                         fnm.getText().toString(),
                                         lnm.getText().toString(),
                                         choosingGender,
@@ -285,25 +284,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void dateFormattar() {
+    private String dateFormattar() {
         String myFormat = "dd-MMM-yyyy";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
         txtDateOfBirth.setText(sdf.format(calendar.getTime()));
 
-//        LocalDate l = LocalDate.of(calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
-//        LocalDate now = LocalDate.now(); //gets localDate
-//        Period diff = Period.between(l, now); //difference between the dates is calculated
-//
-//
-//        String n1=String.valueOf(diff.getYears());
-//        String n2=String.valueOf(diff.getMonths());
-//        String n3=String.valueOf(diff.getDays());
-//        String age="Age: "+n1+"Years, "+n2+"Months, "+n3+"Days";
-//
-//
-//        mainAge.setText(age);
-//        return  n1;
+        LocalDate l = LocalDate.of(calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
+        LocalDate now = LocalDate.now(); //gets localDate
+        Period diff = Period.between(l, now); //difference between the dates is calculated
+
+
+        String n1=String.valueOf(diff.getYears());
+        String n2=String.valueOf(diff.getMonths());
+        String n3=String.valueOf(diff.getDays());
+        String age="Age: "+n1+"Years, "+n2+"Months, "+n3+"Days";
+
+
+        mainAge.setText(age);
+        return  n1;
 
 
 
