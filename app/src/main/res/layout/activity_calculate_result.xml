@@ -7,6 +7,7 @@
     tools:context=".CalculateResult">
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="409dp"
         android:layout_height="600dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,12 +27,12 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="8dp"
-                android:textColor="@android:color/holo_red_dark"
                 android:ems="10"
                 android:fontFamily="monospace"
                 android:inputType="textPersonName"
                 android:text="Income tax calculator for Ontario"
                 android:textAlignment="center"
+                android:textColor="@android:color/holo_red_dark"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -50,7 +51,7 @@
             <TextView
                 android:id="@+id/txtCalFullName"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="25dp"
                 android:layout_marginTop="8dp"
                 android:hint="Full Name"
                 android:textStyle="bold" />
@@ -83,6 +84,7 @@
                 android:layout_height="32dp"
                 android:hint="TaxFillingDate"
                 android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/txtCalGrossIncome"
                 android:layout_width="match_parent"
@@ -90,6 +92,7 @@
                 android:hint="GrossIncome"
                 android:inputType="numberDecimal"
                 android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/txtCalFederalTax"
                 android:layout_width="match_parent"
@@ -155,7 +158,20 @@
                 android:hint="Total Tax Paid"
                 android:inputType="numberDecimal"
                 android:textStyle="bold" />
+
         </LinearLayout>
     </ScrollView>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_marginTop="605dp"
+        android:text="----------CALCULATED-----------"
+        android:textAlignment="center"
+        android:textColor="#0003CC"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@+id/scrollView2"
+        tools:layout_editor_absoluteX="17dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

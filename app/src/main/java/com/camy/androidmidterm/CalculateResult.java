@@ -65,7 +65,7 @@ public class CalculateResult extends AppCompatActivity {
         calDOB.setText("DOB: " + calCRA.getDateOfBirth());
         calTaxFillingDate.setText("TaxFillingDate: "+ calCRA.getTaxFillingDate());
 
-        txtDgrossIncome.setText(" GROSS INCOME: \t" + calCRA.getGrossIncome());
+        txtDgrossIncome.setText("Gross Income:  \t" + calCRA.getGrossIncome());
         txtRRSPContribution.setText("RRSP Contributed: \t" + calCRA.getRrspContri());
         performLogic();
 
